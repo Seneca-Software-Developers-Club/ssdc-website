@@ -9,6 +9,7 @@
 
 ## PRs
 
+- Every PR should follow a naming convention. E.g. `#(IssueNumber): Issue Name`
 - Every PR should be liked with an issue on the repository (i.e. A ticket on the project). You can do this using `#(IssueNumber)`
 
 ## Pages & Components

@@ -5,7 +5,7 @@ export default function About() {
     <>
       <div className="grid m-10 px-10">
         <div className="flex items-center justify-center mb-6">
-          <h1 className="text-3xl font-bold text-center">SENECA SOFTWARE DEVELOPERS CLUB'S MISSION</h1>
+          <h1 className="text-3xl font-bold text-center">SENECA SOFTWARE DEVELOPERS CLUB&apos;S MISSION</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div style={{ color: "#afafaf" }} className="m-2 font-bold">

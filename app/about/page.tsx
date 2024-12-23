@@ -5,7 +5,9 @@ export default function About() {
     <>
       <div className="grid m-10 px-10">
         <div className="flex items-center justify-center mb-6">
-          <h1 className="text-3xl font-bold text-center">SENECA SOFTWARE DEVELOPERS CLUB&apos;S MISSION</h1>
+          <h1 className="text-3xl font-bold text-center">
+            SENECA SOFTWARE DEVELOPERS CLUB&apos;S <br /> MISSION
+          </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div style={{ color: "#afafaf" }} className="m-2 font-bold">
@@ -43,7 +45,7 @@ export default function About() {
                 <span className="text-xl font-bold">MEMBERS</span>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div className="flex justify-center">
                   <div className="text-center">
                     <Image src="/images/eventsIcon.jpg" alt="Event Icon" width={150} height={150} className="m-4" />

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Share_Tech, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 
-const geistSans = Geist({
+const geistSans = Share_Tech({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Share_Tech_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {

@@ -10,7 +10,7 @@ export default function About() {
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div style={{ color: "#afafaf" }} className="m-2 font-bold">
+          <div style={{ color: "#afafaf" }} className="m-2 font-semibold">
             <p>
               The mission of the Seneca Software Developers Club is to provide an inclusive, collaborative and
               educational environment for students to explore and develop their software development skills. We aim to
@@ -78,10 +78,10 @@ export default function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-12 px-10">
         <div>
-          <Image src="/images/clubPhoto.jpg" alt="Club Photo" width={500} height={500} layout="responsive" />
+          <Image src="/images/clubPhoto.jpg" alt="Club Photo" width={500} height={500} />
         </div>
         <div>
-          <Image src="/images/realPhoto.jpg" alt="Real Photo" width={500} height={500} layout="responsive" />
+          <Image src="/images/realPhoto.jpg" alt="Real Photo" width={500} height={500} />
         </div>
       </div>
     </>

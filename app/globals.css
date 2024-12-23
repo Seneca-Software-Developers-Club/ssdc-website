@@ -12,3 +12,12 @@ html {
   background-color: #1e1e1e;
   color: #ffffff;
 }
+
+:root {
+  --font-geist-sans: "Share Tech", sans-serif;
+  --font-geist-mono: "Share Tech Mono", monospace;
+}
+
+body {
+  font-family: var(--font-geist-sans);
+}

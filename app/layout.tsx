@@ -10,8 +10,8 @@ const shareTechSans = Share_Tech({
   weight: "400",
 });
 
-const geistMono = Share_Tech_Mono({
-  variable: "--font-geist-mono",
+const shareTechMono = Share_Tech_Mono({
+  variable: "--font-share-tech-mono",
   subsets: ["latin"],
   weight: "400",
 });
@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${shareTechSans.variable} ${shareTechMono.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />

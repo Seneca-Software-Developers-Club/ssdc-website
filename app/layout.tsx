@@ -4,8 +4,8 @@ import "./globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 
-const geistSans = Share_Tech({
-  variable: "--font-geist-sans",
+const shareTechSans = Share_Tech({
+  variable: "--font-share-tech-sans",
   subsets: ["latin"],
   weight: "400",
 });

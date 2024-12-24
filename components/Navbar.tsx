@@ -62,11 +62,11 @@ export default function Navbar() {
       {/* Mobile dropdown menu */}
       <div
         style={{ backgroundColor: "#1c1c1c" }}
-        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden  ${
           menuOpen ? "max-h-screen py-4 px-6" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col space-y-4 pl-inherit">
+        <ul className="flex flex-col space-y-4 pl-inherit items-center justify-center h-full">
           {navItems.map((item) => (
             <li key={item.label}>
               <Link href={item.href} legacyBehavior>

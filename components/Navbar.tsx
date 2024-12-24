@@ -19,7 +19,6 @@ export default function Navbar() {
     { label: "About Us", href: "/about" },
     { label: "Club Leaders", href: "/club-leaders" },
     { label: "News and Events", href: "/news" },
-
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -29,7 +28,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav style={{ backgroundColor: "#1c1c1c" }} className="text-white">
+    <nav style={{ backgroundColor: "#1e1e1e" }} className="text-white">
       <div className="container mx-auto flex justify-end items-center py-4 px-4 md:px-6">
         {/* Hamburger menu button for mobile screens */}
         <button

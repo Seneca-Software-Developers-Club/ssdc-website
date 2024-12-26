@@ -14,10 +14,10 @@ html {
 }
 
 :root {
-  --font-geist-sans: "Share Tech", sans-serif;
-  --font-geist-mono: "Share Tech Mono", monospace;
+  --font-share-tech-sans: "Share Tech", sans-serif;
+  --font-share-tech-mono: "Share Tech Mono", monospace;
 }
 
 body {
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-share-tech-sans);
 }

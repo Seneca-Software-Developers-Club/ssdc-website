@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Share_Tech, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const shareTechSans = Share_Tech({
+  variable: "--font-share-tech-sans",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const shareTechMono = Share_Tech_Mono({
+  variable: "--font-share-tech-mono",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -47,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${shareTechSans.variable} ${shareTechMono.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />

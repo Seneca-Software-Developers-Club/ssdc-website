@@ -8,9 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        shareTech: ['"Share Tech"', "sans-serif"],
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

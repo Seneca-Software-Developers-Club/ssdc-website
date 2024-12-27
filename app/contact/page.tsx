@@ -6,7 +6,7 @@ import linkedinImg from "../../public/img/linkedin.png";
 
 function Contact() {
   return (
-    <div className="bg-[#1e1e1e] text-white font-shareTech min-h-screen flex flex-col justify-center items-center pt-[8rem]">
+    <div className="bg-[#1e1e1e] text-white min-h-screen flex flex-col justify-center items-center pt-[8rem]">
       <div className="text-center px-4">
         <h1 className="text-3xl md:text-5xl font-normal mb-[50px]">
           JOIN SENECA&apos;S COOLEST NERDS

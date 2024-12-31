@@ -8,8 +8,10 @@ import trImage from "../../public/images/tr.png";
 const ClubLeadersPage = () => {
   return (
     <div className="bg-[#1e1e1e] text-white min-h-screen flex flex-col justify-center items-center pt-16">
-      <h1 className="text-3xl md:text-5xl font-bold mb-4">CLUB LEADERS</h1>
-      <div className="flex flex-col items-start max-w-6xl mx-auto">
+      <h1 className="text-[32px] font-bold mb-8 tracking-[3px]">
+        CLUB LEADERS
+      </h1>
+      <div className="flex flex-col items-start max-w-6xl mx-auto space-y-8 md:space-y-0">
         {/* Leader 1 */}
         <div className="flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-4">
           <div className="relative w-60 h-60 mx-auto md:mx-0">
@@ -26,14 +28,14 @@ const ClubLeadersPage = () => {
                 alt="Pratham Garg"
                 width={132}
                 height={132}
-                className="rounded-full object-cover"
+                className="rounded-full object-cover border-4 border-transparent"
               />
             </div>
           </div>
           <div className="text-center md:text-left flex flex-col justify-center items-center md:items-start">
-            <h2 className="text-red-500 text-xl font-bold">Pratham Garg</h2>
-            <h3 className="text-lg">President</h3>
-            <p className="text-gray-400 max-w-sm leading-6 text-justify">
+            <h2 className="text-[#EC1E27] text-2xl font-bold">Pratham Garg</h2>
+            <h3 className="text-2xl font-bold">President</h3>
+            <p className="text-gray-400 max-w-[18rem] leading-[1.25rem]">
               This is a placeholder for a description about the leader to
               encourage connection with current and potential members. It can be
               both professional and personal.
@@ -57,16 +59,16 @@ const ClubLeadersPage = () => {
                 alt="Gurmehak Kaur Uppal"
                 width={132}
                 height={132}
-                className="rounded-full object-cover"
+                className="rounded-full object-cover border-4 border-transparent"
               />
             </div>
           </div>
           <div className="text-center md:text-left flex flex-col justify-center items-center md:items-start">
-            <h2 className="text-red-500 text-xl font-bold">
+            <h2 className="text-[#EC1E27] text-2xl font-bold">
               Gurmehak Kaur Uppal
             </h2>
-            <h3 className="text-lg">Vice President</h3>
-            <p className="text-gray-400 max-w-sm leading-6 text-justify">
+            <h3 className="text-2xl font-bold">Vice President</h3>
+            <p className="text-gray-400 max-w-[18rem] leading-[1.25rem]">
               This is a placeholder for a description about the leader to
               encourage connection with current and potential members. It can be
               both professional and personal.
@@ -90,14 +92,14 @@ const ClubLeadersPage = () => {
                 alt="Saeed Bafana"
                 width={132}
                 height={132}
-                className="rounded-full object-cover"
+                className="rounded-full object-cover border-4 border-transparent"
               />
             </div>
           </div>
           <div className="text-center md:text-left flex flex-col justify-center items-center md:items-start">
-            <h2 className="text-red-500 text-xl font-bold">Saeed Bafana</h2>
-            <h3 className="text-lg">Treasurer</h3>
-            <p className="text-gray-400 max-w-sm leading-6 text-justify">
+            <h2 className="text-[#EC1E27] text-2xl font-bold">Saeed Bafana</h2>
+            <h3 className="text-2xl font-bold">Treasurer</h3>
+            <p className="text-gray-400 max-w-[18rem] leading-[1.25rem]">
               This is a placeholder for a description about the leader to
               encourage connection with current and potential members. It can be
               both professional and personal.

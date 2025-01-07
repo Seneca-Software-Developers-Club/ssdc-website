@@ -17,8 +17,8 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Club Leaders", href: "/club-leaders" },
-    { label: "News and Events", href: "/news" },
+    { label: "Club Leaders", href: "/executives" },
+    { label: "News and Events", href: "/events" },
     { label: "Contact Us", href: "/contact" },
   ];
 

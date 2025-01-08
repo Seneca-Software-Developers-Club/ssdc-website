@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 /**
@@ -8,25 +8,46 @@ import Image from "next/image";
  * This component represents the homepage for the website.
  */
 export default function Home() {
+  const [isLightOn, setIsLightOn] = useState(true);
+
+  // Randomize the bulb light toggle with specific intervals
+  useEffect(() => {
+    const intervals = [3000, 5000];
+    const getRandomInterval = () =>
+      intervals[Math.floor(Math.random() * intervals.length)];
+
+    const interval = setInterval(() => {
+      setIsLightOn((prev) => !prev); // Toggle the light on/off
+    }, getRandomInterval());
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="bg-darkgray-800 text-white h-auto flex flex-col items-center justify-center">
         {/* Flex Container for Bulb and Main Content */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center mb-8 md:mb-[-33]">
           {/* Bulb (hidden on smaller screens) */}
-          <div className="relative top-[-200px] md:top-[-150px] left-0 md:left-[-100px] hidden md:block">
+          <div
+            className={`relative top-[-200px] md:top-[-150px] left-0 md:left-[-100px] hidden md:block fade-in`}
+          >
             <Image
               src="/images/lightOn2.png"
               alt="Light Bulb"
               width={300}
               height={300}
               priority
-              className="object-contain w-[200px] md:w-[300px] lg:w-[400px] h-auto"
+              className={`object-contain w-[200px] md:w-[300px] lg:w-[400px] h-auto transition-all duration-500 ${
+                isLightOn
+                  ? "brightness-100"
+                  : "brightness-50 sepia-1 hue-rotate-0 saturate-[200%]"
+              }`}
             />
           </div>
 
           {/* Main Content (Logos and Text) */}
-          <div className="relative flex flex-col justify-center items-center md:items-start w-full">
+          <div className="relative flex flex-col justify-center items-center md:items-start w-full md:mt-[120px]">
             {/* Div for SENECA */}
             <div className="flex items-center w-full sm:px-2 md:px-4">
               {/* Left Logo */}
@@ -88,10 +109,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="relative w-full flex flex-col items-center">
-          {/* Gears Section */}
-          <div className="w-full flex justify-end items-center pr-4 md:pr-8 mb-4 md:mb-8">
-            <div className="text-bottom flex gap-3 md:gap-5">
+
+        {/* Gears Section */}
+        <div className="relative w-full flex flex-col">
+          <div className="w-full flex justify-end pr-4 md:pr-8 mb-12 roll-in">
+            <div className="flex gap-3 md:gap-5 roll-in gearSpin">
               <Image
                 src="/images/lp-gear-2.png"
                 alt="Small Gear"
@@ -112,6 +134,46 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Animations */}
+      <style jsx global>{`
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(-50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes gearSpin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes roll {
+          0% {
+            opacity: 0;
+            transform: translateX(-1000px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .fade-in {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        .roll-in {
+          animation: roll 3s ease-in-out forwards;
+        }
+        .gearSpin img {
+          animation: gearSpin 3s linear infinite;
+        }
+      `}</style>
     </>
   );
 }

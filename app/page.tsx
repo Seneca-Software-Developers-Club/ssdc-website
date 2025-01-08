@@ -30,10 +30,10 @@ export default function Home() {
     <>
       <div className="bg-darkgray-800 text-white h-auto flex flex-col items-center justify-center">
         {/* Flex Container for Bulb and Main Content */}
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-center mb-8 md:mb-[-33]">
+        <div className="flex md:flex-row items-center md:items-start justify-center mb-8 md:mb-[-33]">
           {/* Bulb Section */}
           <div
-            className={`relative top-[-200px] md:top-[-150px] left-0 md:left-[-100px] hidden md:block fade-in`}
+            className={`relative top-[-200px] md:top-[-60px] md:left-[-100px] hidden md:block fade-in`}
           >
             {/* Light Bulb Image */}
             <Image

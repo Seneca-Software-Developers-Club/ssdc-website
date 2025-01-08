@@ -6,20 +6,23 @@ import Image from "next/image";
 /**
  * Home Page Component
  * This component represents the homepage for the website.
+ * It includes animations for a light bulb and gears, with a randomized light toggle.
  */
 export default function Home() {
+  // State to track whether the bulb is on or off
   const [isLightOn, setIsLightOn] = useState(true);
 
-  // Randomize the bulb light toggle with specific intervals
+  // Effect to toggle the bulb light randomly within specific intervals
   useEffect(() => {
-    const intervals = [3000, 5000];
+    const intervals = [3000, 5000]; // Define intervals for light toggle
     const getRandomInterval = () =>
       intervals[Math.floor(Math.random() * intervals.length)];
 
     const interval = setInterval(() => {
-      setIsLightOn((prev) => !prev); // Toggle the light on/off
+      setIsLightOn((prev) => !prev); // Toggle light on/off
     }, getRandomInterval());
 
+    // Cleanup the interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
@@ -28,10 +31,11 @@ export default function Home() {
       <div className="bg-darkgray-800 text-white h-auto flex flex-col items-center justify-center">
         {/* Flex Container for Bulb and Main Content */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center mb-8 md:mb-[-33]">
-          {/* Bulb (hidden on smaller screens) */}
+          {/* Bulb Section */}
           <div
             className={`relative top-[-200px] md:top-[-150px] left-0 md:left-[-100px] hidden md:block fade-in`}
           >
+            {/* Light Bulb Image */}
             <Image
               src="/images/lightOn2.png"
               alt="Light Bulb"
@@ -46,7 +50,7 @@ export default function Home() {
             />
           </div>
 
-          {/* Main Content (Logos and Text) */}
+          {/* Main Content Section */}
           <div className="relative flex flex-col justify-center items-center md:items-start w-full md:mt-[120px]">
             {/* Div for SENECA */}
             <div className="flex items-center w-full sm:px-2 md:px-4">
@@ -55,10 +59,11 @@ export default function Home() {
                 <Image
                   src="/images/logoLeft.png"
                   alt="Left Logo"
-                  layout="fill"
+                  fill
                   className="object-contain"
                 />
               </div>
+              {/* SENECA Text */}
               <div className="text-left pl-2 md:pl-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide leading-none">
                   <span className="text-red-500">S</span>ENECA
@@ -68,8 +73,7 @@ export default function Home() {
 
             {/* Div for SOFTWARE */}
             <div className="flex items-center w-full sm:px-2 md:px-4">
-              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>{" "}
-              {/* Empty space for alignment */}
+              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>
               <div className="text-left pl-2 md:pl-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide leading-none">
                   <span className="text-red-500">S</span>OFTWARE
@@ -79,8 +83,7 @@ export default function Home() {
 
             {/* Div for DEVELOPERS */}
             <div className="flex items-center w-full sm:px-2 md:px-4">
-              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>{" "}
-              {/* Empty space for alignment */}
+              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>
               <div className="text-left pl-2 md:pl-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide leading-none">
                   <span className="text-red-500">D</span>EVELOPERS
@@ -90,8 +93,7 @@ export default function Home() {
 
             {/* Div for CLUB */}
             <div className="flex items-center w-full sm:px-2 md:px-4">
-              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>{" "}
-              {/* Empty space for alignment */}
+              <div className="w-10 md:w-12 lg:w-16 h-[80px]"></div>
               <div className="text-left pl-2 md:pl-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wide leading-none">
                   <span className="text-red-500">C</span>LUB
@@ -102,7 +104,7 @@ export default function Home() {
                 <Image
                   src="/images/logoRight.png"
                   alt="Right Logo"
-                  layout="fill"
+                  fill
                   className="object-contain"
                 />
               </div>
@@ -114,6 +116,7 @@ export default function Home() {
         <div className="relative w-full flex flex-col">
           <div className="w-full flex justify-end pr-4 md:pr-8 mb-12 roll-in">
             <div className="flex gap-3 md:gap-5 roll-in gearSpin">
+              {/* Small Gear */}
               <Image
                 src="/images/lp-gear-2.png"
                 alt="Small Gear"
@@ -122,6 +125,7 @@ export default function Home() {
                 priority
                 className="object-contain w-[60px] sm:w-[70px] md:w-[80px] lg:w-[100px] h-auto"
               />
+              {/* Large Gear */}
               <Image
                 src="/images/lp-gear-1.png"
                 alt="Large Gear"
@@ -134,8 +138,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* Animations */}
       <style jsx global>{`
+        /* Animation for fading in elements */
         @keyframes fadeIn {
           0% {
             opacity: 0;
@@ -146,6 +152,8 @@ export default function Home() {
             transform: translateY(0);
           }
         }
+
+        /* Animation for spinning gears */
         @keyframes gearSpin {
           0% {
             transform: rotate(0deg);
@@ -154,6 +162,8 @@ export default function Home() {
             transform: rotate(360deg);
           }
         }
+
+        /* Animation for rolling in elements */
         @keyframes roll {
           0% {
             opacity: 0;
@@ -164,12 +174,18 @@ export default function Home() {
             transform: translateX(0);
           }
         }
+
+        /* Apply fade-in animation */
         .fade-in {
           animation: fadeIn 1s ease-out forwards;
         }
+
+        /* Apply roll-in animation */
         .roll-in {
           animation: roll 3s ease-in-out forwards;
         }
+
+        /* Apply spin animation to gears */
         .gearSpin img {
           animation: gearSpin 3s linear infinite;
         }

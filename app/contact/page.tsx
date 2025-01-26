@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Image from "next/image";
 import discordImg from "../../public/img/discord.png";
@@ -5,6 +7,35 @@ import instagramImg from "../../public/img/insta-color.png";
 import linkedinImg from "../../public/img/linkedin.png";
 
 function Contact() {
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const result = await response.json();
+    setIsSubmitting(false);
+
+    if (response.ok) {
+      alert("Email sent successfully!");
+    } else {
+      alert(`Failed to send email: ${result.message}`);
+    }
+  };
+
+
+
   return (
     <div className="bg-[#1e1e1e] text-white min-h-screen flex flex-col justify-center items-center pt-[8rem]">
       <div className="text-center px-4">
@@ -27,11 +58,8 @@ function Contact() {
         {/* Form Section */}
         <div className="text-[#afafaf] flex flex-col items-start">
           <h2 className="text-xl font-bold mb-4">QUESTIONS?</h2>
-          <form
-            action="https://formsubmit.co/0498c06d68d1be23210ebbb10d0f9860"
-            method="POST"
-            className="w-full"
-          >
+          <form onSubmit={handleSubmit} className="w-full">
+
             <div className="mb-4">
               <label htmlFor="name" className="block mb-2 font-bold">
                 Name
@@ -74,8 +102,9 @@ function Contact() {
             <button
               type="submit"
               className="bg-[#ec1e27] text-white px-6 py-2 rounded-lg text-lg hover:bg-red-600 transition"
+              disabled={isSubmitting}
             >
-              SEND
+              {isSubmitting ? "Sending..." : "SEND"}
             </button>
           </form>
         </div>
@@ -128,7 +157,7 @@ function Contact() {
           </a>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
